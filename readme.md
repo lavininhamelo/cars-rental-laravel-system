@@ -1,4 +1,4 @@
-# Projeto AutoBridge (Grupo 2)
+# Projeto AutoBridge (Grupo 3)
 ## Alunos
 ### 1 ) Cristian Rambo 2017.1906.005-3
 ### 2 ) Hiroshi Takehisa Neto 2017.1904.006-0
