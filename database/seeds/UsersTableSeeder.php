@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         	'profile_autobridge_id' => '1',
         	'name' => 'Admin',
         	'email' => 'admin@autobridge.com',
-        	'password' => 'admin@123',
+        	'password' => bcrypt('admin@123'),
         	'CPF' => '00000000000',
         	'CEP' => '00000000',
         	'CNH' => '00000000'

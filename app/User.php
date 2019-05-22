@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'profile_autobridge_id','name', 'email', 'password','CPF','CEP','CNH',
     ];
 
     /**
