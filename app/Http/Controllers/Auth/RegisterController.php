@@ -67,9 +67,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        var_dump($data);
-        echo 'ola';
-        exit();
         return User::create([
             'profile_autobridge_id' => $data['profile_autobridge_id'],
             'name' => $data['name'],

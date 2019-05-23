@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <input type="hidden" id="profile_autobridge_id" value ='1'>
+                        <input type="hidden" name="profile_autobridge_id" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} " name="profile_autobridge_id" value="1">
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
