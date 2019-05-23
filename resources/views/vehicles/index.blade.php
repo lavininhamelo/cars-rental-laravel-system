@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('../layouts.app')
 
 @section('content')
 <div class="container">
@@ -6,6 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">AutoBridge</div>
+                    <div class="pull-right">
+                        <a class="btn btn-success" href="{{ route('vehicles.create') }}"> Create New Vehicle</a>
+                    </div>
                 <table class="table">
                     <thead>
                         <tr>

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     		PermissionsTableSeeder::class,
     		ProfilesTableSeeder::class,
     		UsersTableSeeder::class
+            StatusVehicleTableSeeder::class
     	]); 
     } 
 }
