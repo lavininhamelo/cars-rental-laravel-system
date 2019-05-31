@@ -4,7 +4,7 @@
 <title>@yield('titulo')</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}"" />
+<link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css')}}" />
 <link rel="stylesheet" href="{{ asset('/css/bootstrap-responsive.min.css')}}" />
 <link rel="stylesheet" href="{{ asset('/css/fullcalendar.css')}}" />
 <link rel="stylesheet" href="{{ asset('/css/matrix-style.css')}}" />
@@ -60,7 +60,7 @@
         <!--sidebar-menu-->
         <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
           <ul>
-            <li class="active"><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+            <li><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
             <li> <a href="#"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a> </li>
             <li> <a href="#"><i class="icon icon-inbox"></i> <span>Widgets</span></a> </li>
             <li><a href="#"><i class="icon icon-th"></i> <span>Tables</span></a></li>
@@ -110,12 +110,10 @@
         <!--sidebar-menu-->
 
         <div id="content">
-                <!--breadcrumbs-->
-                  <div id="content-header">
-                    <div id="breadcrumb"> <a href="i#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-                  </div>
-                <!--End-breadcrumbs-->
-        <div class="container-fluid">
+
+
+
+
 
 
 

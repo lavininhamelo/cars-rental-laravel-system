@@ -1,48 +1,107 @@
-@extends('../layouts.app')
-  
-@section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New vehicle</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('vehicles.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
-   
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-   
-<form action="{{ route('vehicles.store') }}" method="POST">
-    @csrf
-  
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+@extends('layouts.app')
+@section('titulo','Cadastrar veículo | Autobridge')
+
+@section('h1','Cadastrar veículo')
+
+@section('conteudo')
+@include('layouts.breadcrumb')
+
+
+
+
+          <div class="span12">
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div class="widget-box">
+              <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                <h5>Informações de Veículos</h5>
+              </div>
+              <div class="widget-content nopadding">
+                <form action="{{ route('vehicles.store') }}" method="post" class="form-horizontal">
+                {{csrf_field()}}
+                    <div class="control-group">
+                        <label class="control-label">Fabricante:</label>
+                        <div class="controls">
+                          <select class="span5" name="manufacturer">
+                              <option value="Audi">Audi</option>
+                              <option value="BMW">BMW</option>
+                              <option value="Chevrolet">Chevrolet</option>
+                              <option value="Ferrari">Ferrari</option>
+                              <option value="Fiat">Fiat</option>
+                              <option value="Ford">Ford </option>
+                              <option value="Honda">Honda</option>
+                              <option value="Hyundai">Hyundai</option>
+                              <option value="Lamborghini">Lamborghini</option>
+                              <option value="Land Rover">Land Rover</option>
+                              <option value="Lexus">Lexus</option>
+                              <option value="Mercedes-Benz">Mercedes-Benz</option>
+                              <option value="Nissan">Nissan</option>
+                              <option value="Peugeot">Peugeot</option>
+                              <option value="Renault">Renault</option>
+                              <option value="Toyota" >Toyota</option>
+                              <option value="Volkswagen" >Volkswagen</option>
+
+                          </select>
+                        </div>
+                      </div>
+                  <div class="control-group">
+                    <label class="control-label">Modelo:</label>
+                    <div class="controls">
+                      <input type="text" class="span5" placeholder="Modelo" name="model"  />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Ano:</label>
+                    <div class="controls">
+                      <input type="text" class="span5" placeholder="Ano" name="year" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Chassi:</label>
+                    <div class="controls">
+                      <input type="text"  class="span5" placeholder="Chassi" name="chassi"  />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Placa:</label>
+                    <div class="controls">
+                      <input type="text" class="span5" placeholder="Placa" name="license_plate" />
+                    </div>
+                    <div class="controls">
+                        <input type="hidden" name="rental_agency_id" class="form-control" value="{{isset(auth()->user()->rental_agency_id) ? auth()->user()->rental_agency_id : null}}">
+                        <input type="hidden" name="status_id" class="form-control" value="1">
+                    </div>
+
+
+
+
+
+                    <div class="form-actions text-left ">
+                            <a class="btn btn-danger" href="{{ route('vehicles.index') }}"> Voltar</a>
+                            <button type="submit" class="btn btn-success">Adicionar</button>
+
+                      </div>
+
+
+
+
+
+                </form>
+              </div>
             </div>
+          </div>
+
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Detail:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
-   
-</form>
+
+
 @endsection
