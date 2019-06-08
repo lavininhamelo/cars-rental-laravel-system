@@ -6,12 +6,11 @@
 @section('conteudo')
 @include('layouts.breadcrumb')
 
-
-
-
-
 <div class="pull-right">
-        <a class="btn btn-success" style="margin-bottom:10px;"href="{{ route('vehicles.create') }}"> Create New Vehicle</a>
+    @can('create', App\Vehicle::class)
+      <a class="btn btn-success" style="margin-bottom:10px;"href="{{ route('vehicles.create') }}">  Create New Vehicle</a>
+    @endcan
+
     </div>
 
             <div class="widget-box">

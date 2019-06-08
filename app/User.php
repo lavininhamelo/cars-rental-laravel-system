@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'profile_autobridge_id','name', 'email', 'password','CPF','CEP','CNH',
+        'profile_id','rental_agency_id','name', 'email', 'password','CPF','CEP','CNH',
     ];
 
     /**
@@ -36,4 +37,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function profile(){
+        return $this->belongsTo('App\Profile', 'profile_id','id');
+    }
+
+    public function permissions(){
+        return $this->belongsToMany('App\Permission');
+    }
 }
