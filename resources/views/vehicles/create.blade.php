@@ -29,6 +29,7 @@
               <div class="widget-content nopadding">
                 <form action="{{ route('vehicles.store') }}" method="post" class="form-horizontal">
                 {{csrf_field()}}
+             
                     <div class="control-group">
                         <label class="control-label">Fabricante:</label>
                         <div class="controls">
@@ -63,7 +64,7 @@
                   <div class="control-group">
                     <label class="control-label">Ano:</label>
                     <div class="controls">
-                      <input type="text" class="span5" placeholder="Ano" name="year" />
+                      <input type="number" placeholder="Ano" name="year" class="span5" min="1900" max="2099" step="1" value="2016" />
                     </div>
                   </div>
                   <div class="control-group">
@@ -72,11 +73,11 @@
                       <input type="text"  class="span5" placeholder="Chassi" name="chassi"  />
                     </div>
                   </div>
-                  <div class="control-group">
+                 <!--  <div class="control-group">
                     <label class="control-label">Placa:</label>
                     <div class="controls">
                       <input type="text" class="span5" placeholder="Placa" name="license_plate" />
-                    </div>
+                    </div> -->
                     <div class="controls">
                         <input type="hidden" name="rental_agency_id" class="form-control" value="{{isset(auth()->user()->rental_agency_id) ? auth()->user()->rental_agency_id : null}}">
                         <input type="hidden" name="status_id" class="form-control" value="1">
