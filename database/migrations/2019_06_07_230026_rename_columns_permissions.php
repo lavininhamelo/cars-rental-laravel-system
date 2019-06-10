@@ -14,7 +14,7 @@ class RenameColumnsPermissions extends Migration
     public function up()
     {
         Schema::table('permissions_profiles', function(Blueprint $table) {
-            $table->renameColumn('id_autobridge_profile', 'profile_id');
+            $table->renameColumn('id_profile_autobridge', 'profile_id');
             $table->renameColumn('id_permission', 'permission_id');
         });
     }

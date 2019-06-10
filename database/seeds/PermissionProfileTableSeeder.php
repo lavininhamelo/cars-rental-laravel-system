@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PermissionsProfilesSeeder extends Seeder
+class PermissionProfileTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class PermissionsProfilesSeeder extends Seeder
      */
     public function run()
     {
-        $permissionsTable = DB::table('permissions_profiles');
+        $permissionsTable = DB::table('permission_profile');
         $permissionsTable->delete();
         $permissionsTable->insert([
         	'id' => '1',
