@@ -11,17 +11,19 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $permissionsTable = DB::table('users');
+        $usersTable = DB::table('users');
+        $usersTable->delete();
 
         //Users
-        $permissionsTable->insert([
-        	'profile_autobridge_id' => '1',
-        	'name' => 'Admin',
-        	'email' => 'admin@autobridge.com',
-        	'password' => bcrypt('admin@123'),
-        	'CPF' => '00000000000',
-        	'CEP' => '00000000',
-        	'CNH' => '00000000'
+        $usersTable->insert([
+            'profile_id' => '1',
+            'name' => 'Admin',
+            'email' => 'admin@autobridge.com',
+            'password' => bcrypt('admin@123'),
+            'CPF' => '00000000000',
+            'CEP' => '00000000',
+            'CNH' => '00000000',
+            'rental_agency_id' => '1'
         ]);
     }
 }

@@ -26,8 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('CEP');
             $table->string('CNH');
             $table->rememberToken();
-            $table->timestamps();        
-
+            $table->timestamps();
             $table->foreign('profile_autobridge_id')->references('id')->on('profiles')->onDelete('cascade');
 
         });

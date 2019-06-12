@@ -12,7 +12,7 @@ class Vehicle extends Model
      * @var array
      */
     protected $fillable = [
-        'rental_agency_id','manufacturer', 'mode', 'year','chassi','status_id'
+        'rental_agency_id','manufacturer', 'model', 'year','chassi','status_id',
     ];
 
     /**

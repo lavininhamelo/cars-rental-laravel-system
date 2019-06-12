@@ -27,10 +27,10 @@
 <script src="{{ asset('/js/matrix.form_validation.js') }}"></script>
 <script src="{{ asset('/js/jquery.wizard.js') }}"></script>
 <script src="{{ asset('/js/jquery.uniform.js') }}"></script>
-<script src="{{ asset('/js/select2.min.js') }}"></script>
+//<script src="{{ asset('/js/select2.min.js') }}"></script>
 <script src="{{ asset('/js/matrix.popover.js') }}"></script>
-<script src="{{ asset('/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('/js/matrix.tables.js') }}"></script>
+//<script src="{{ asset('/js/jquery.dataTables.min.js') }}"></script>
+//<script src="{{ asset('/js/matrix.tables.js') }}"></script>
 
 <script type="text/javascript">
   // This function is called from the pop-up menus to transfer to

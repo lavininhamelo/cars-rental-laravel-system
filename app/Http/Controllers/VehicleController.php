@@ -12,6 +12,10 @@ class VehicleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
     	$vehicles = Vehicle::latest()->paginate(10);
     	return view('vehicles.index',compact('vehicles'))->with('i',(request()->input('page',1)-1)*5);
@@ -22,6 +26,7 @@ class VehicleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
+        $this->authorize('create', Vehicle::class);  
     	return view('vehicles.create');
     }
 
@@ -31,6 +36,7 @@ class VehicleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -39,12 +45,14 @@ class VehicleController extends Controller
             'model' => 'required|string',
             'year' => 'required',
             'chassi' => 'required|string|size:11',
-            'status_id' => 'required|integer',
+            'status_id' => 'required|integer'
         ]);
   
         Vehicle::create($request->all());
    
         return redirect()->route('vehicles.index')
-                        ->with('success','Vehicle created successfully.');
+                         ->with('success','Vehicle created successfully.');
     }
+
+    
 }
