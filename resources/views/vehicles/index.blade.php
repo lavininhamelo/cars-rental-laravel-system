@@ -43,14 +43,20 @@
                             <td>ARH-2323</td>
                             <td>{{ $vehicle->rental_agency_id}}</td>
                         </tr>
+
                     @endforeach
                   </tbody>
                 </table>
 
 
 
+
+
               </div>
+
+
             </div>
+            {{$vehicles->links()}}
           </div>
         </div>
 
