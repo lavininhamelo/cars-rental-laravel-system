@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
             'CPF' => '00000000000',
             'CEP' => '00000000',
             'CNH' => '00000000',
-            'rental_agency_id' => null
+            'rental_agency_id' => '1'
         ]);
     }
 }
