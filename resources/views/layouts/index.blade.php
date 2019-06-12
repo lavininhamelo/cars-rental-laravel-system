@@ -1,6 +1,6 @@
-@extends('layouts.app')
-@section('titulo','Dashbord | Autobridge')
-@section('conteudo')
+@extends('dashboard.app')
+@section('title','Dashbord | Autobridge')
+@section('content')
 
 <div id="content-header">
         <div id="breadcrumb">
@@ -10,7 +10,7 @@
 
 
 <div class="container-fluid">
-        @include('layouts.boxes')
-        @include('layouts.chart')
+        @include('dashboard.boxes')
+        @include('dashboard.chart')
 @endsection
 
