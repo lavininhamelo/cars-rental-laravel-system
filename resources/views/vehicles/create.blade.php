@@ -27,7 +27,7 @@
                 <h5>Informações de Veículos</h5>
               </div>
               <div class="widget-content nopadding">
-                <form action="{{ route('vehicles.store') }}" method="post" class="form-horizontal">
+                <form action="{{ route('vehicles.store') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                 {{csrf_field()}}
 
                     <div class="control-group">
@@ -73,11 +73,38 @@
                       <input type="text"  class="span5" placeholder="Chassi" name="chassi"  />
                     </div>
                   </div>
-                 <!--  <div class="control-group">
+                     <div class="control-group">
                     <label class="control-label">Placa:</label>
                     <div class="controls">
                       <input type="text" class="span5" placeholder="Placa" name="license_plate" />
-                    </div> -->
+                    </div>
+                    <div class="control-group">
+                    <label class="control-label">Cor:</label>
+                    <div class="controls">
+                      <input type="text" class="span5" placeholder="Cor" name="color"   />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                        <label class="control-label">Cota diária:</label>
+                        <div class="controls">
+                          <input type="text" class="span5" placeholder="Cor" name="value"   />
+                        </div>
+                      </div>
+                  <div class="control-group">
+                        <label class="control-label">Descrição:</label>
+                        <div class="controls">
+                        <textarea class="span5" id="description" name="description" rows="5" cols="33">
+                        </textarea>
+                        </div>
+                </div>
+                <div class="control-group">
+                        <label class="control-label">Adicionar imagem:</label>
+                        <div class="controls">
+
+                                <input type="file" class="form-control-file" id="image" name="image">
+                        </div>
+                        </div>
+                </div>
                     <div class="controls">
                         <input type="hidden" name="rental_agency_id" class="form-control" value="{{isset(auth()->user()->rental_agency_id) ? auth()->user()->rental_agency_id : null}}">
                         <input type="hidden" name="status_id" class="form-control" value="1">
