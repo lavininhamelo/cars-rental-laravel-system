@@ -1,10 +1,10 @@
-@extends('layouts.app')
-@section('titulo','Cadastrar veículo | Autobridge')
+@extends('dashboard.app')
+@section('title','Cadastrar veículo | Autobridge')
 
 @section('h1','Cadastrar veículo')
 
-@section('conteudo')
-@include('layouts.breadcrumb')
+@section('content')
+@include('dashboard.breadcrumb')
 
 
 
@@ -29,7 +29,7 @@
               <div class="widget-content nopadding">
                 <form action="{{ route('vehicles.store') }}" method="post" class="form-horizontal">
                 {{csrf_field()}}
-             
+
                     <div class="control-group">
                         <label class="control-label">Fabricante:</label>
                         <div class="controls">

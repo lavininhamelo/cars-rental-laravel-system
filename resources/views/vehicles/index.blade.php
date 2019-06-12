@@ -1,10 +1,10 @@
-@extends('layouts.app')
-@section('titulo','Veículos cadastrados | Autobridge')
+@extends('dashboard.app')
+@section('title','Veículos cadastrados | Autobridge')
 
 @section('h1','Veículos cadastrados')
 
-@section('conteudo')
-@include('layouts.breadcrumb')
+@section('content')
+@include('dashboard.breadcrumb')
 
 <div class="pull-right">
     @can('create', App\Vehicle::class)
@@ -33,28 +33,22 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="gradeX">
-                     <td>Audi</td>
-                     <td>R8</td>
-                     <td>2018</td>
-                     <td>200/H</td>
-                     <td>12121212121</td>
-                     <td>ARH-2323</td>
-                     <td>1</td>
-                    </tr>
-                    <tr class="gradeX">
-                        <td>Ford</td>
-                        <td>Fiesta</td>
-                        <td>2018</td>
-                        <td>200/H</td>
-                        <td>13131313131</td>
-                        <td>ARH-2323</td>
-                        <td>1</td>
-                    </tr>
-
-
+                        @foreach ($vehicles as $vehicle)
+                        <tr class="gradeX">
+                            <td>{{ $vehicle->manufacturer}}</td>
+                            <td>{{ $vehicle->model}}</td>
+                            <td>{{ $vehicle->year}}</td>
+                            <td>69,99/D</td>
+                            <td>{{ $vehicle->chassi}}</td>
+                            <td>ARH-2323</td>
+                            <td>{{ $vehicle->rental_agency_id}}</td>
+                        </tr>
+                    @endforeach
                   </tbody>
                 </table>
+
+
+
               </div>
             </div>
           </div>
