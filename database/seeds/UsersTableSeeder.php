@@ -16,13 +16,13 @@ class UsersTableSeeder extends Seeder
 
         //Users
         $usersTable->insert([
-        	'profile_id' => '1',
-        	'name' => 'Admin',
-        	'email' => 'admin@autobridge.com',
-        	'password' => bcrypt('admin@123'),
-        	'CPF' => '00000000000',
-        	'CEP' => '00000000',
-        	'CNH' => '00000000',
+            'profile_id' => '1',
+            'name' => 'Admin',
+            'email' => 'admin@autobridge.com',
+            'password' => bcrypt('admin@123'),
+            'CPF' => '00000000000',
+            'CEP' => '00000000',
+            'CNH' => '00000000',
             'rental_agency_id' => null
         ]);
     }
