@@ -12,7 +12,7 @@ class Vehicle extends Model
      * @var array
      */
     protected $fillable = [
-        'rental_agency_id','manufacturer', 'model', 'year','chassi','status_id',
+        'rental_agency_id', 'manufacturer', 'model', 'year', 'chassi', 'status_id', 'color', 'description', 'image', 'license_plate', 'value'
     ];
 
     /**
@@ -20,7 +20,7 @@ class Vehicle extends Model
      *
      * @var array
      */
-  
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -30,9 +30,8 @@ class Vehicle extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    public function rental_agency(){
-    	return $this->belongsTo('App\RentalAgency');
+    public function rental_agency()
+    {
+        return $this->belongsTo('App\RentalAgency');
     }
-
-
 }
