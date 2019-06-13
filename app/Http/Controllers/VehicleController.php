@@ -46,6 +46,11 @@ class VehicleController extends Controller
             'manufacturer' => 'required|string',
             'model' => 'required|string',
             'year' => 'required',
+            'color' => 'required',
+            'description' => 'required',
+            'license_plate' => 'required',
+            'image' => 'required',
+            'value' => 'required|integer',
             'chassi' => 'required|string|size:11',
             'status_id' => 'required|integer'
         ]);
@@ -57,7 +62,7 @@ class VehicleController extends Controller
             $num = rand(1111, 9999);
             $dir = "img/vehicles/";
             $extension = $image->guessClientExtension();
-            $imageName = "vc" . $num . "." . $extension;
+            $imageName = "VH" . $num . "." . $extension;
             $image->move($dir, $imageName);
             $dates['image']  = $dir . "/" . $imageName;
         }
@@ -66,6 +71,35 @@ class VehicleController extends Controller
 
         return redirect()->route('vehicles.index')
             ->with('success', 'Vehicle created successfully.');
+    }
+
+    public function edit(Vehicle $vehicle)
+    {
+        return view('vehicles.edit', compact('vehicle'));
+    }
+
+
+    public function update(Request $request, Vehicle $vehicle)
+    {
+        $request->validate([
+            'rental_agency_id' => 'required|integer',
+            'manufacturer' => 'required|string',
+            'model' => 'required|string',
+            'year' => 'required',
+            'color' => 'required',
+            'description' => 'required',
+            'license_plate' => 'required',
+            //'image' => 'required',
+            'value' => 'required|integer',
+            'chassi' => 'required|string|size:11',
+            'status_id' => 'required|integer'
+        ]);
+
+
+        $vehicle->update($request->all());
+
+        return redirect()->route('vehicles.index')
+            ->with('success', 'Vehicle updated successfully');
     }
 
     public function destroy($id)
