@@ -87,14 +87,13 @@
                   <div class="control-group">
                         <label class="control-label">Cota diária:</label>
                         <div class="controls">
-                          <input type="text" class="span5" placeholder="Cor" name="value"   />
+                          <input type="text" class="span5" placeholder="Valor diário" name="value"   />
                         </div>
                       </div>
                   <div class="control-group">
                         <label class="control-label">Descrição:</label>
                         <div class="controls">
-                        <textarea class="span5" id="description" name="description" rows="5" cols="33">
-                        </textarea>
+                        <textarea class="span5" id="description" name="description" rows="5" placeholder="Descreva as características do veículo..."></textarea>
                         </div>
                 </div>
                 <div class="control-group">
