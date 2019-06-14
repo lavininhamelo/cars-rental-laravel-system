@@ -31,11 +31,11 @@
                     <th scope="col">Ano</th>
                     <th scope="col">Placa</th>
                     <th scope="col">Chassi</th>
-
+                    <th scope="col">Color</th>
                     <th scope="col">Cota</th>
                     <th scope="col">Locadora</th>
-                    <th scope="col">Status</th>
-                    <th  width="136"scope="col">Ações</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Ações</th>
 
 
                 </tr>
@@ -49,15 +49,14 @@
                     <td class="align-middle">{{ $vehicle->year}}</td>
                     <td class="align-middle">{{ $vehicle->license_plate}}</td>
                     <td class="align-middle">{{ $vehicle->chassi}}</td>
+                    <td class="align-middle">{{ $vehicle->color}}</td>
                     <td class="align-middle">{{ $vehicle->value}}</td>
                     <td class="align-middle">{{ $vehicle->rental_agency_id}}</td>
-                    <td class="align-middle">{{ $vehicle->status_id}}</td>
+                    <td class="align-middle">{{ $vehicle->description}}</td>
                     <td class="actions">
-                        <a class="btn btn-success btn-xs" href="#"><i class="icon-eye-open"></i> </a>
+                        <a class="btn btn-success btn-xs" href="{{ route('vehicles.show',$vehicle->id) }}"><i class="icon-eye-open"></i> </a>
                         <a class="btn btn-warning btn-xs" href="{{ route('vehicles.edit',$vehicle->id) }}"><i class="icon-edit"></i></a>
                         <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"><i class="icon-trash"></i></a>
-
-
 
                     </td>
                 </tr>
@@ -66,24 +65,7 @@
             </tbody>
         </table>
 
-        <form action="{{ route('vehicles.destroy', $vehicle->id)}}" method="post">
-                <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="modalLabel">Excluir Veículo</h4>
-                                </div>
-                                <div class="modal-body">Deseja realmente excluir este veículo? </div>
-                                <div class="modal-footer">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" class="btn btn-primary">Sim</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+
 
 
 
@@ -92,6 +74,28 @@
 
 </div>
 {{$vehicles->links()}}
+
+<form action="{{ route('vehicles.destroy', $vehicle->id)}}" method="post">
+
+
+        <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLabel">Excluir Veículo</h4>
+                    </div>
+                    <div class="modal-body">Deseja realmente excluir este veículo? </div>
+                    <div class="modal-footer">
+                        @csrf @method('DELETE')
+                        <button type="submit" class="btn btn-primary">Sim</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
 </div>
 </div>
 <!-- Modal -->

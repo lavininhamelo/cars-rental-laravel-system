@@ -571,6 +571,13 @@ hr{ border-top-color:#dadada;}
 	padding: 9px 10px 7px 11px;
 	float: left; border-right:1px solid #dadada;
 }
+
+.widget-title span.icon2{
+	padding: 9px 10px 7px 11px;
+    float: right; 
+    border-right:1px solid #dadada;
+}
+
 .widget-title h5 {
 	color: #666;
 	float: left;
