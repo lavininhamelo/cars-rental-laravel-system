@@ -75,6 +75,9 @@
 </div>
 {{$vehicles->links()}}
 
+
+
+
 <form action="{{ route('vehicles.destroy', $vehicle->id)}}" method="post">
 
 

@@ -19,4 +19,5 @@ Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/public', ['as' => 'public', 'uses' => 'HomeController@show']);
 Route::resource('vehicles', 'VehicleController');

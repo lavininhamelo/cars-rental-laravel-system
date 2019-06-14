@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Vehicle;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -24,5 +25,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('layouts.index');
+    }
+
+    public function show()
+    {
+        $vehicles = Vehicle::where('status_id', '=', '1')->latest('created_at')->paginate(5);
+
+        return view('public', compact('vehicles'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }
