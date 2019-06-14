@@ -150,7 +150,7 @@
                                             <div class="row car-item__inner--shadow">
                                                 <div class="col-sm-3 col-12 car-item__column--first">
                                                     <h2 class="car-item--headline">
-                                                            {{$vehicle->manufacturer}} {{ $vehicle->model}}
+                                                            {{$vehicle->manufacturer}} {{ $vehicle->model}}  - {{$vehicle->rental_agency->name}}
                                                         <small> {{ $vehicle->year}}</small>
                                                     </h2>
                                                     <div class="car-item--short-description">

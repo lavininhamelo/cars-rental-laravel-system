@@ -70,7 +70,7 @@ class VehicleController extends Controller
         Vehicle::create($dates);
 
         return redirect()->route('vehicles.index')
-            ->with('success', 'Vehicle created successfully.');
+            ->with('success', 'Veículo criado com sucesso');
     }
 
     public function edit(Vehicle $vehicle)
@@ -99,7 +99,7 @@ class VehicleController extends Controller
         $vehicle->update($request->all());
 
         return redirect()->route('vehicles.index')
-            ->with('success', 'Vehicle updated successfully');
+            ->with('success', 'Veículo atualizado com sucesso');
     }
 
     public function show(Vehicle $vehicle)
@@ -107,11 +107,10 @@ class VehicleController extends Controller
         return view('vehicles.show', compact('vehicle'));
     }
 
-    public function destroy($id)
+    public function destroy(Vehicle $vehicle)
     {
-        $vehicle = Vehicle::find($id);
         $vehicle->delete();
 
-        return redirect('/vehicles')->with('success', 'Vehicle has been deleted Successfully');
+        return redirect('/vehicles')->with('success', 'Veículo deletado com sucesso');
     }
 }
