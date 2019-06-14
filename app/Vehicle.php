@@ -32,6 +32,6 @@ class Vehicle extends Model
 
     public function rental_agency()
     {
-        return $this->belongsTo('App\RentalAgency');
+        return $this->belongsTo('RentalAgency');
     }
 }
