@@ -102,6 +102,11 @@ class VehicleController extends Controller
             ->with('success', 'Vehicle updated successfully');
     }
 
+    public function show(Vehicle $vehicle)
+    {
+        return view('vehicles.show', compact('vehicle'));
+    }
+
     public function destroy($id)
     {
         $vehicle = Vehicle::find($id);

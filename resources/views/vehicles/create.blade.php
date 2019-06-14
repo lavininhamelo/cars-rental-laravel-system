@@ -85,11 +85,15 @@
                     </div>
                   </div>
                   <div class="control-group">
-                        <label class="control-label">Cota diária:</label>
+                        <label class="control-label">Valor diário:</label>
                         <div class="controls">
-                          <input type="text" class="span5" placeholder="Valor diário" name="value"   />
+                          <div class="input-append">
+                            <input type="text" class="span4" placeholder="Valor diário" name="value"   />
+                            <span class="add-on"> ,00 / por dia</span> </div>
                         </div>
                       </div>
+
+
                   <div class="control-group">
                         <label class="control-label">Descrição:</label>
                         <div class="controls">
