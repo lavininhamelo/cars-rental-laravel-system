@@ -1,142 +1,72 @@
 <!DOCTYPE html>
 
 <html lang="pt-br">
-
-<head>
-
-
-
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=10">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-
-    <link rel="shortcut icon" href="">
-
-
-
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('css/basic.css')}}" />
-    <link rel="stylesheet" href="{{ asset('css/all.css')}}" />
-
-
-
-    <title>Autobridge - Aluguel</title>
-
-
-
-
-
-</head>
-
-<body class="loaded">
-
-
-    <div id="app" class="wrapper">
-        <!-- ====================== HEADER ====================== -->
-
-
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <header class="header">
-
-
-
-
-
-
-
-
-            <nav class="nav-main">
-                <div class="container">
-                    <div class="row header-holder">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <small>Menu</small>
-                            </button>
-                            <a class="navbar-brand"><img src="{{asset('/img/logo.png')}}" width="175"alt="Autobridge" title="Autobridge" class="img-responsive"></a>
-
-                        </div>
-                        <div class="collapse navbar-collapse" id="navbar-collapse">
-                            <ul data-nav-partner="false">
+        <meta http-equiv="X-UA-Compatible" content="IE=10">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" href="">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ asset('css/basic.css')}}" />
+        <link rel="stylesheet" href="{{ asset('css/all.css')}}" />
+        <title>Autobridge - Aluguel</title>
+    </head>
+    <body class="loaded">
+        <div id="app" class="wrapper">
+            <header class="header">
+                <nav class="nav-main">
+                    <div class="container">
+                        <div class="row header-holder">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <small>Menu</small>
+                                </button>
+                                <a class="navbar-brand"><img src="{{asset('/img/logo.png')}}" width="175"alt="Autobridge" title="Autobridge" class="img-responsive"></a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbar-collapse">
+                                <ul data-nav-partner="false">
                                     <li><a href="#" ><span>Para Você</span></a></li>
                                     <li><a href="#" ><span>Para Empresas</span></a></li>
                                     <li><a href="#" ><span>Minhas Reservas</span></a></li>
                                     <li><a href="#" ><span>Parcerias & Ofertas</span></a></li>
                                     <li><a href="#" ><span>Atendimento</span></a></li>
-
-
-
-{{--LOGIN--}}
-
-
-        @if (Route::has('login'))
-
-                @auth
-                <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
-                        <span class="link-login"><a href="#" id="welcome">Bem vindo {{Auth::user()->name}}</a></span>
-
-
-                        @if(Auth::user()->profile_id == 1)
-                            <span class="link-register"><a href="{{ url('/home') }}" id="access-personal-register-area">Dashboard</a></span>
-                            </li>
-                        @else
-                            <span class="link-register"><a href="{{ url('/home') }}" id="access-personal-register-area">Minhas Reservas</a></span>
-                            </li>
-                         @endif
-
-                @else
-
-                    <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
-                            <span class="link-login"><a href="{{ route('login') }}" id="access-your-dashboard">Login</a></span>
-
-                    @if (Route::has('register'))
-
-                        <span class="link-register"><a href="{{ route('register') }}" id="access-personal-register-area">Cadastre-se</a></span>
-                        </li>
-                    @endif
-                @endauth
-            </div>
-        @endif
-
-
-
-
-
-
-                            </ul>
-
+                                    @if (Route::has('login'))
+                                    @auth
+                                    <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
+                                        <span class="link-login"><a href="#" id="welcome">Bem vindo {{Auth::user()->name}}</a></span>
+                                        @if(Auth::user()->profile_id == 1)
+                                        <span class="link-register">
+                                            <a href="{{ url('/home') }}" id="access-personal-register-area">Dashboard</a>
+                                        </span>
+                                        @else
+                                        <span class="link-register"><a href="{{ url('/home') }}" id="access-personal-register-area">Minhas Reservas</a></span>
+                                        @endif
+                                    </li>
+                                    @else
+                                    <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
+                                        <span class="link-login"><a href="{{ route('login') }}" id="access-your-dashboard">Login</a></span>
+                                        @if (Route::has('register'))
+                                        <span class="link-register"><a href="{{ route('register') }}" id="access-personal-register-area">Cadastre-se</a></span>
+                                        @endif
+                                    </li>
+                                    @endauth
+                                </ul>
+                            </div>
+                            @endif
                         </div>
                     </div>
-                </div>
-            </nav>
-        </header>
-
-
-
-
-
-
-
-
-
-        <!-- ====================== CONTENT ====================== -->
+                </nav>
+            </header>
+        </div>
         <main id="main-content">
-
-
-
-
-
             <div id="partial-groups">
-
                 <div class="bg-blue-gradient--internal">
                     <div class="bg-blue-gradient__inner">
-
-
                         <div class="container">
-
                             <div class="row m-t-sm-0 m-t-md-50" id="wrapper-headline">
                                 <div class="col-lg col-12">
                                     <h1 class="main-headline"><span>Escolha um veículo ideal pra você</span></h1>
@@ -176,7 +106,7 @@
                                                     </div>
                                                     <div class="hidden-xs-down">
                                                         <input type="hidden" name="hdn-code" class="hdn-code" value="ECMM">
-                                                        <a title="Selecionar Carro" href="#" class="button flat contrast shadow--light-2x big--font-small big--font-secondary block btn-select-group">Alugar</a>
+                                                        <a title="Selecionar Carro" href="{{url('rental')}}" class="button flat contrast shadow--light-2x big--font-small big--font-secondary block btn-select-group">Alugar</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,28 +118,11 @@
                             {{$vehicles->links()}}
                             <br>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
         </main>
-
-        <!-- ====================== FOOTER ====================== -->
-
-
-
-
         <footer>
-
-
             <div class="footer__inner--copyright">
                 <div class="container">
                     <div class="row">
@@ -224,18 +137,6 @@
                 </div>
             </div>
         </footer>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 </body>
 

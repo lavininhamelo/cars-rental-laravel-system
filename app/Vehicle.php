@@ -32,6 +32,14 @@ class Vehicle extends Model
 
     public function rental_agency()
     {
-        return $this->belongsTo('App\RentalAgency');
+        return $this->belongsTo(RentalAgency::class);
+    }
+
+    public function user(){
+        return $this->belongsToMany(User::class); 
+    }
+
+    public function rental(){
+        return $this->hasMany(Rental::class);
     }
 }

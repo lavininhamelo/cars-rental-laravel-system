@@ -13,6 +13,6 @@ class RentalAgency extends Model
 
     public function vehicle()
     {
-        return $this->hasMany('App\Vehicle');
+        return $this->hasMany(Vehicle::class);
     }
 }

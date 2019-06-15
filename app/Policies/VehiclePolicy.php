@@ -37,4 +37,18 @@ class VehiclePolicy
         }
         return false;
     }
+    public function listVehicles(){
+        $user_profile = auth()->user()->profile;
+        $permissions = $user_profile->permissions;
+
+        foreach ($permissions as $permission => $value) {
+            
+            if($this->full_acess($value['name'])){
+                return true;
+            }elseif ($value['name'] == 'Vehicle_Create') {
+                return true;
+            }
+        }
+        return false;
+    }
 }

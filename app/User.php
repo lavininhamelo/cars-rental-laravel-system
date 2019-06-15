@@ -39,10 +39,18 @@ class User extends Authenticatable
     ];
 
     public function profile(){
-        return $this->belongsTo('App\Profile', 'profile_id','id');
+        return $this->belongsTo(Profile::class, 'profile_id','id');
     }
 
     public function permissions(){
-        return $this->belongsToMany('App\Permission');
+        return $this->belongsToMany(Permission::class);
+    }
+
+    public function vehicle(){
+        return $this->belongsToMany(Vehicle::class); 
+    }
+
+    public function rental(){
+        return $this->hasMany(Rental::class);
     }
 }
