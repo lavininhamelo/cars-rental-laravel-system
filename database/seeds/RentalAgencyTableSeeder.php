@@ -11,7 +11,7 @@ class RentalAgencyTableSeeder extends Seeder
      */
     public function run()
     {
-        $rentalAgencyTable = DB::table('rental_agency');
+        $rentalAgencyTable = DB::table('rental_agencies');
         $rentalAgencyTable->delete();
 
         //rentalAgency
