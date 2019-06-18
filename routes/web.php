@@ -19,6 +19,8 @@ Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'UserController@profile')->name('profile');
 Route::get('/public', ['as' => 'public', 'uses' => 'HomeController@show']);
 Route::resource('vehicles', 'VehicleController');
 Route::resource('rentals', 'RentalController');
+Route::resource('users', 'UserController');
