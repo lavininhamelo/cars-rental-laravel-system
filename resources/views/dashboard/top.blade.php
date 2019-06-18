@@ -26,9 +26,9 @@
         <!--top-Header-menu-->
         <div id="user-nav" class="navbar navbar-inverse">
           <ul class="nav">
-            <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome {{Auth::user()->name}}</span><b class="caret"></b></a>
+            <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">{{Auth::user()->name}}</span><b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+                <li><a href="/profile"><i class="icon-user"></i>Meu Perfil</a></li>
                 <li class="divider"></li>
                 <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
                 <li class="divider"></li>
@@ -67,7 +67,7 @@
         <!--close-top-Header-menu-->
         <!--start-top-serch-->
         <div id="search">
-          <input type="text" placeholder="Search here..."/>
+          <input type="text" placeholder="Pesquisar..."/>
           <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
         </div>
         <!--close-top-serch-->
@@ -77,7 +77,7 @@
             <li><a href="#"><i class="icon icon-home"></i>      <span>Dashboard</span></a> </li>
             <li><a href="#"><i class="icon icon-signal"></i>   <span>Aluguéis</span></a> </li>
             <li><a href="/vehicles"><i class="icon icon-road"></i>    <span>Veículos</span></a> </li>
-            <li><a href="#"><i class="icon icon-user"></i>        <span>Usuários</span></a></li>
+            <li><a href="/users"><i class="icon icon-user"></i>        <span>Usuários</span></a></li>
             <li><a href="#"><i class="icon icon-cog"></i><span>Manutenção</span></a></li>
             <li><a href="#"><i class="icon icon-tint"></i>      <span>Agências</span></a></li>
             <li><a href="#"><i class="icon icon-th"></i>    <span>Funcionários</span></a></li>
@@ -93,7 +93,6 @@
         </form>
 
         <div id="content">
-
 
 
 
