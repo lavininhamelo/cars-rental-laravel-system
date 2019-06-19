@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 	    /**
@@ -22,6 +22,7 @@ class UserController extends Controller
 
     public function index()
     {
+        $this->authorize('listUsers', User::class);
         $users = User::latest()->paginate(10);
         return view('users.index', compact('users'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -48,13 +49,14 @@ class UserController extends Controller
             'profile_id' => 'required|integer',
             'rental_agency_id' => 'integer',
             'name' => 'required|string',
-            'email' => 'required|string',
-            'CPF' => 'required|string|size:11',
+            'email' => 'required|string|unique:users',
+            'CPF' => 'required|string|size:11|unique:users',
             'CEP' => 'required|string|size:8',
-            'CNH' => 'required|string|size:11',
-            'status_id' => 'required|integer'
+            'CNH' => 'required|string|size:11|unique:users',
+            'status_id' => 'required|integer',
+            'password' => 'required'
         ]);
-  
+        $request['password'] = Hash::make($request->password);
         User::create($request->all());
    
         return redirect()->route('users.index')
@@ -64,6 +66,7 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        $this->authorize('create', User::class);
         return view('users.edit', compact('user'));
     }
 
@@ -78,9 +81,10 @@ class UserController extends Controller
             'CPF' => 'required|string|size:11',
             'CEP' => 'required|string|size:8',
             'CNH' => 'required|string|size:11',
-            'status_id' => 'required|integer'
+            'status_id' => 'required|integer',
+            'password' => 'required'
         ]);
-
+        $request['password'] = Hash::make($request->password);
 
         $user->update($request->all());
 

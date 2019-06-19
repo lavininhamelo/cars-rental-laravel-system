@@ -76,8 +76,13 @@
           <ul>
             <li><a href="#"><i class="icon icon-home"></i>      <span>Dashboard</span></a> </li>
             <li><a href="#"><i class="icon icon-signal"></i>   <span>Aluguéis</span></a> </li>
-            <li><a href="/vehicles"><i class="icon icon-road"></i>    <span>Veículos</span></a> </li>
-            <li><a href="/users"><i class="icon icon-user"></i>        <span>Usuários</span></a></li>
+            @can('listVehicles', App\Vehicle::class)
+              <li><a href="/vehicles"><i class="icon icon-road"></i><span>Veículos</span></a> </li>
+            @endcan
+            @can('listUsers', App\User::class)
+              <li><a href="/users"><i class="icon icon-user"></i>        <span>Usuários</span></a></li>
+            @endcan
+            
             <li><a href="#"><i class="icon icon-cog"></i><span>Manutenção</span></a></li>
             <li><a href="#"><i class="icon icon-tint"></i>      <span>Agências</span></a></li>
             <li><a href="#"><i class="icon icon-th"></i>    <span>Funcionários</span></a></li>

@@ -18,6 +18,7 @@ class VehicleController extends Controller
     }
     public function index()
     {
+        $this->authorize('listVehicles', Vehicle::class);
         $vehicles = Vehicle::latest()->paginate(10);
         return view('vehicles.index', compact('vehicles'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -55,7 +56,7 @@ class VehicleController extends Controller
             'status_id' => 'required|integer'
         ]);
 
-        $dates =  $request->all();
+        $dates = $request->all();
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -75,6 +76,7 @@ class VehicleController extends Controller
 
     public function edit(Vehicle $vehicle)
     {
+        $this->authorize('create', Vehicle::class);
         return view('vehicles.edit', compact('vehicle'));
     }
 

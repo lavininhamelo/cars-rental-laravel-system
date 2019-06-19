@@ -45,7 +45,7 @@ class UserPolicy
             
             if($this->full_acess($value['name'])){
                 return true;
-            }elseif ($value['name'] == 'User_Create') {
+            }elseif ($value['name'] == 'User_List') {
                 return true;
             }
         }
