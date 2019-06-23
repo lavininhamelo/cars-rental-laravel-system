@@ -106,7 +106,7 @@
                                                     </div>
                                                     <div class="hidden-xs-down">
                                                         <input type="hidden" name="hdn-code" class="hdn-code" value="ECMM">
-                                                        <a title="Selecionar Carro" href="{{url('rental')}}" class="button flat contrast shadow--light-2x big--font-small big--font-secondary block btn-select-group">Alugar</a>
+                                                        <a title="Selecionar Carro" href="{{route('rentals.vehicles.rent', $vehicle->id)}}" class="button flat contrast shadow--light-2x big--font-small big--font-secondary block btn-select-group">Alugar</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -13,11 +13,10 @@ class CreateRentalTable extends Migration
      */
      public function up()
     {
-        Schema::create('rental', function (Blueprint $table) {
+        Schema::create('rentals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('vehicle_id');
             $table->unsignedBigInteger('user_id');
-            $table->integer('contract_number');
             $table->string('value');
             $table->enum('status', ['lesead', 'available', 'returned', 'overdue','reserved']);
             $table->dateTime('return_date');

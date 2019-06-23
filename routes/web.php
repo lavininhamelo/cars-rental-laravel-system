@@ -23,4 +23,5 @@ Route::get('/profile', 'UserController@profile')->name('profile');
 Route::get('/public', ['as' => 'public', 'uses' => 'HomeController@show']);
 Route::resource('vehicles', 'VehicleController');
 Route::resource('rentals', 'RentalController');
+Route::get('rentals/vehicles/{id}','RentalController@rent')->name('rentals.vehicles.rent');
 Route::resource('users', 'UserController');
