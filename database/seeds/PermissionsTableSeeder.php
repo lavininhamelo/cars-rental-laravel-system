@@ -108,6 +108,11 @@ class PermissionsTableSeeder extends Seeder
             'name' => 'List_all_Vehicles_rent',
             'description' => 'Permitido listar todos os veículos disponíveis'
         ]);
+        $permissionsTable->insert([
+            'id' => '18',
+            'name' => 'Rent_Update_part',
+            'description' => 'Permitido atualizar pelo cliente'
+        ]);
         //Geral
         $permissionsTable->insert([
             'id' => '17',

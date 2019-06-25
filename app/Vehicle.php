@@ -30,6 +30,10 @@ class Vehicle extends Model
         'email_verified_at' => 'datetime',
     ];
 
+    public function status(){
+        return $this->belongsTo(StatusVehicle::class);
+    }
+
     public function rental_agency()
     {
         return $this->belongsTo(RentalAgency::class);

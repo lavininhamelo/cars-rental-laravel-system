@@ -31,19 +31,19 @@
                                 <ul data-nav-partner="false">
                                     <li><a href="#" ><span>Para Você</span></a></li>
                                     <li><a href="#" ><span>Para Empresas</span></a></li>
-                                    <li><a href="#" ><span>Minhas Reservas</span></a></li>
+                                    <li><a href="/rentals" ><span>Minhas Reservas</span></a></li>
                                     <li><a href="#" ><span>Parcerias & Ofertas</span></a></li>
                                     <li><a href="#" ><span>Atendimento</span></a></li>
                                     @if (Route::has('login'))
                                     @auth
                                     <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
-                                        <span class="link-login"><a href="#" id="welcome">Bem vindo {{Auth::user()->name}}</a></span>
+                                        <span class="link-login"><a href="#" id="welcome">Bem-vindo {{Auth::user()->name}}</a></span>
                                         @if(Auth::user()->profile_id == 1)
                                         <span class="link-register">
                                             <a href="{{ url('/home') }}" id="access-personal-register-area">Dashboard</a>
                                         </span>
                                         @else
-                                        <span class="link-register"><a href="{{ url('/home') }}" id="access-personal-register-area">Minhas Reservas</a></span>
+                                        <span class="link-register"><a href="/rentals" id="access-personal-register-area">Minhas Reservas</a></span>
                                         @endif
                                     </li>
                                     @else

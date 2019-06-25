@@ -31,7 +31,7 @@
 	<div class="control-group">
 		<label class="control-label">Data de retorno:</label>
         <div class="controls">
-        	<input name="return_date" type="datetime-local" class="span5">
+        	<input name="return_date" type="datetime-local" min="<?php echo $date ?>" class="span5">
         </div>
     </div>
     

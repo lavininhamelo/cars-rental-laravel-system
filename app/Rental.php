@@ -16,4 +16,13 @@ class Rental extends Model
     public function vehicle(){
     	return $this->belongsTo(Vehicle::class);
     }
+
+    public static function getRentals(){
+		$rentals = Rental::latest()->paginate();
+        $user = auth()->user();
+        if($user->profile->name == 'Cliente'){
+            $rentals = Rental::where('user_id', '=',$user->id)->paginate();
+        }
+        return $rentals;
+    }
 }

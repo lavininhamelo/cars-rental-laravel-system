@@ -34,6 +34,7 @@
           <th scope="col">Cor</th>
           <th scope="col">Diária</th>
           <th scope="col">Locadora</th>
+          <th scope="col">Status</th>
           <th scope="col">Descrição</th>
           <th scope="col">Ações</th>
         </tr>
@@ -50,6 +51,7 @@
           <td class="align-middle">{{ $vehicle->color}}</td>
           <td class="align-middle">R$ {{ $vehicle->value}},00</td>
           <td class="align-middle">{{ $vehicle->rental_agency->name}}</td>
+          <td class="align-middle">{{ $vehicle->status->name}}</td>
           <td class="align-middle">{{ $vehicle->description}}</td>
           <td class="actions">
             <a class="btn btn-success btn-xs" href="{{ route('vehicles.show',$vehicle->id) }}"><i class="icon-eye-open"></i> </a>

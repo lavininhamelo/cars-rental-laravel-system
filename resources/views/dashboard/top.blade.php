@@ -75,7 +75,7 @@
         <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
           <ul>
             <li><a href="#"><i class="icon icon-home"></i>      <span>Dashboard</span></a> </li>
-            <li><a href="#"><i class="icon icon-signal"></i>   <span>Aluguéis</span></a> </li>
+            <li><a href="/rentals"><i class="icon icon-signal"></i>   <span>Aluguéis</span></a> </li>
             @can('listVehicles', App\Vehicle::class)
               <li><a href="/vehicles"><i class="icon icon-road"></i><span>Veículos</span></a> </li>
             @endcan

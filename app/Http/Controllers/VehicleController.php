@@ -104,6 +104,12 @@ class VehicleController extends Controller
             ->with('success', 'Veículo atualizado com sucesso');
     }
 
+    public function update_status(Request $request, Vehicle $vehicle){
+        $vehicle->update($request->all());
+        return redirect()->route('vehicles.index')
+            ->with('success', 'Veículo atualizado com sucesso');
+    }
+
     public function show(Vehicle $vehicle)
     {
         return view('vehicles.show', compact('vehicle'));
