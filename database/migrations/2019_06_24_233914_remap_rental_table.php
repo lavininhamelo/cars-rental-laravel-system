@@ -14,15 +14,21 @@ class RemapRentalTable extends Migration
     public function up()
     {
         Schema::table('rentals', function ($table) {
+
+
             $table->dropColumn('status');
+        });
+        Schema::table('rentals', function ($table) {
+
             $table->enum('status', ['progress', 'fineshed', 'overdue']);
         });
     }
+
+
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-    
 }
