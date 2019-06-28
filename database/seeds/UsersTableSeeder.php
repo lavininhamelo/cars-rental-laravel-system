@@ -25,5 +25,28 @@ class UsersTableSeeder extends Seeder
             'CNH' => '00000000',
             'rental_agency_id' => '1'
         ]);
+
+        $usersTable->insert([
+            'profile_id' => '2',
+            'name' => 'funcionario',
+            'email' => 'funcionario@autobridge.com',
+            'password' => bcrypt('funcionario'),
+            'CPF' => '00000000002',
+            'CEP' => '00000000',
+            'CNH' => '00000001',
+            'rental_agency_id' => '2'
+        ]);            
+
+        $usersTable->insert([
+            'profile_id' => '3',
+            'name' => 'cliente',
+            'email' => 'cliente@autobridge.com',
+            'password' => bcrypt('cliente'),
+            'CPF' => '00000000001',
+            'CEP' => '00000000',
+            'CNH' => '00000002',
+            'rental_agency_id' => '3'
+        ]);
+
     }
 }
