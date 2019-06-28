@@ -26,3 +26,4 @@ Route::post('vehicles/{id}','VehicleController@update_status')->name('vehicles.u
 Route::resource('rentals', 'RentalController');
 Route::get('rentals/vehicles/{id}','RentalController@rent')->name('rentals.vehicles.rent');
 Route::resource('users', 'UserController');
+Route::resource('rentalagency', 'RentalAgencyController');
