@@ -46,7 +46,6 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'profile_id' => 'required|integer',
             'rental_agency_id' => 'integer',
             'name' => 'required|string',
             'email' => 'required|string|unique:users',
@@ -57,6 +56,7 @@ class UserController extends Controller
             'password' => 'required'
         ]);
         $request['password'] = Hash::make($request->password);
+        $request['profile_id'] = 3;
         User::create($request->all());
    
         return redirect()->route('users.index')
