@@ -8,6 +8,11 @@ use App\RentalAgency;
 
 class RentalAgencyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +31,7 @@ class RentalAgencyController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', RentalAgency::class);
+      //  $this->authorize('create', RentalAgency::class);
         return view('rentalagency.create'); //implementar view
     }
 
@@ -38,7 +43,22 @@ class RentalAgencyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // echo '<pre>';
+        // var_dump($request);
+        // echo '</pre>';
+        $request->validate([
+            'name' => 'required|string',
+            'city' => 'required|string',
+            'state' => 'required|string',
+            'country' => 'required|string',
+            'location' => 'required|string',
+            'CNPJ' => 'required|string|size:14',
+        ]);
+
+        RentalAgency::create($request->all()); //erro ao inserir
+
+        return redirect()->route('rentalagency.index')
+        ->with('success', 'Agência criada com sucesso');
     }
 
     /**

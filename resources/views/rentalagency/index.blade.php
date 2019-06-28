@@ -1,4 +1,4 @@
-@extends('dashboard.app') @section('title','Agências cadastradas | Autobridge') @section('h1','Veículos cadastrados') @section('content') @include('dashboard.breadcrumb')
+@extends('dashboard.app') @section('title','Agências cadastradas | Autobridge') @section('h1','Agências cadastradas') @section('content') @include('dashboard.breadcrumb')
 <div class="card-body">
   @if (session('success'))
     <div class="alert alert-success" role="alert">
@@ -8,9 +8,7 @@
 </div>
 
 <div class="pull-right">
-  @can('create', App\RentalAgency::class)
     <a class="btn btn-success" style="margin-bottom:10px;" href="{{ route('rentalagency.create') }}"> Adicionar nova Agência</a> 
-  @endcan
 </div>
 
 @if($agency->count() > 0)
@@ -31,6 +29,7 @@
           <th scope="col">País</th>
           <th scope="col">Localização</th>
           <th scope="col">CNPJ</th>
+          <th scope="col">Ações</th>
         </tr>
       </thead>
       <tbody>
