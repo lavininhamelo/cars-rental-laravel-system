@@ -86,6 +86,8 @@
             <li><a href="#"><i class="icon icon-cog"></i><span>Manutenção</span></a></li>
             <li><a href="#"><i class="icon icon-tint"></i>      <span>Agências</span></a></li>
             <li><a href="#"><i class="icon icon-th"></i>    <span>Funcionários</span></a></li>
+            <li><a href="/rentalagency"><i class="icon icon-th"></i>    <span>Agência de veículos</span></a></li>
+
 
 
 
