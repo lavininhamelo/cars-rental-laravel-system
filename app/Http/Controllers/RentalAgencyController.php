@@ -92,7 +92,20 @@ class RentalAgencyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rental = Rental::getRentalAgency();
+        $request->validate([
+            'name' => 'required|integer',
+            'city' => 'integer',
+            'state' => 'required|string',
+            'country' => 'required|string',
+            'location' => 'required|string',
+            'CNPJ' => 'required|string|size:14',
+        ]);
+
+        $user->update($request->all());
+
+        return redirect()->route('rentalagency.index')
+            ->with('success', 'Agência atualizada com sucesso');
     }
 
     /**
