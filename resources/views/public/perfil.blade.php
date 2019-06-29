@@ -79,16 +79,8 @@
 
                                 <div class="row">
 
-                                    <div class="col p-r-5 p-r-xs-15" style="margin-bottom:100px;" >
-<a href="/perfil" >
-
-    <p><b>MEU CADASTRO</b></p>
-    <p><img src="{{ asset('img/perfil/user.jpg')}}" width="155"alt=""></p>
-
-</a>
-                                    </div>
                                      <div class="col p-r-5 p-r-xs-15" style="margin-bottom:100px;" >
-<a href="/perfil"><p><b>MINHAS RESERVAS</b></p>
+<a href="/rentals"><p><b>MINHAS RESERVAS</b></p>
 <p><img src="{{ asset('img/perfil/reserva.png')}}" width="225"alt=""></p></a>
                                     </div>
                                      <div class="col p-r-5 p-r-xs-15" style="margin-bottom:100px;" >

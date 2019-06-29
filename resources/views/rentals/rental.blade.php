@@ -137,7 +137,7 @@
                                                     <div >
                                                         <label>DATA DE RETORNO</label>
                                                             <div class="controls">
-                                                                <input name="return_date" type="datetime-local" min="<?php echo $date ?>" class="span5">
+                                                                <input name="return_date" value="2019-07-29T10:26" type="datetime-local" min="<?php echo $date ?>" class="span5">
                                                             </div>
                                                         </span>
                                                     </div>
