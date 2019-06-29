@@ -1,2 +1,2 @@
 
-@extends(Auth::user()->profile_id!=1 ? 'rentals.user' : 'rentals.adm')
+@extends(Auth::user()->profile_id!=3 ? 'rentals.adm' : 'rentals.user')

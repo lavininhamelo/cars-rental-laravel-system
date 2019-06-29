@@ -41,6 +41,7 @@
           <td class="align-middle">{{ $rental->created_at}}</td>
           <!-- btn btn-success btn-xs <i class="icon-eye-open"></i>-->
           @can('alter_status', App\Rental::class)
+          @if ($rental->status != 'fineshed')
             <td class="actions">
               <form action="{{ route('rentals.update', $rental->id)}}" method="post">
                 @method('PUT')
@@ -53,8 +54,11 @@
                   <input type="submit" class="btn btn-success" value="Atualizar status">
               </form>
             </td>
+            @endif
           @endcan
           @can('alter_by_client', App\Rental::class)
+            @if ($rental->status != 'fineshed')
+
             <td class="actions">
               <form action="{{ route('rentals.update', $rental->id)}}" method="post">
                 @method('PUT')
@@ -86,6 +90,7 @@
               </div>
               </form>
             </td>
+            @endif
           @endcan
 
 
