@@ -14,16 +14,17 @@ class RentalAgencyTableSeeder extends Seeder
         $rentalAgencyTable = DB::table('rental_agencies');
         $rentalAgencyTable->delete();
 
-        //rentalAgency
-        $rentalAgencyTable->insert([
+         //rentalAgency
+         $rentalAgencyTable->insert([
             'id' => '1',
             'name' => 'Locadora Moreninha',
             'city' => 'Campo Grande',
             'state' => 'MS',
             'country' => 'Brazil',
             'location' => 'Avenida Mato Grosso, 232',
-            'CNPJ' => '45.348.894/0001-43'
+            'CNPJ' => '45348894000143'
         ]);
+
         $rentalAgencyTable->insert([
             'id' => '2',
             'name' => 'Locadora Vila Olinda',
@@ -31,8 +32,9 @@ class RentalAgencyTableSeeder extends Seeder
             'state' => 'MS',
             'country' => 'Brazil',
             'location' => 'Avenida Afonso Pena, 454',
-            'CNPJ' => '23.348.894/0001-43'
+            'CNPJ' => '23348894000143'
         ]);
+        
         $rentalAgencyTable->insert([
             'id' => '3',
             'name' => 'Locadora Afonso Pena',
@@ -40,7 +42,9 @@ class RentalAgencyTableSeeder extends Seeder
             'state' => 'MS',
             'country' => 'Brazil',
             'location' => 'Avenida Manuel da Costa Lima, 232',
-            'CNPJ' => '88.348.894/0001-43'
+            'CNPJ' => '88348894000143'
         ]);
+
+       
     }
 }
