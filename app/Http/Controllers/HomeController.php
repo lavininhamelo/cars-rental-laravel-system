@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function show()
     {
-        $vehicles = Vehicle::where('status_id', '=', '1')->latest('created_at')->paginate();
+        $vehicles = Vehicle::where('status_id', '=', '1')->latest('created_at')->paginate(5);
 
         return view('public', compact('vehicles'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
