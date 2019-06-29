@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/public';
 
     /**
      * Create a new controller instance.
@@ -49,12 +49,16 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'profile_autobridge_id' => 'required',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'CPF' => 'required|string|size:11',
+            'CEP' => 'required|string|size:8',
+            'CNH' => 'required|string|size:11'
         ]);
     }
-
+    
     /**
      * Create a new user instance after a valid registration.
      *
@@ -64,9 +68,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'profile_autobridge_id' => $data['profile_autobridge_id'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'CPF' => $data['CPF'],
+            'CEP' => $data['CEP'],
+            'CNH' => $data['CNH']
         ]);
     }
 }

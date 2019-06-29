@@ -11,14 +11,17 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+
+
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('profile_autobridge_id');
+            $table->unsignedBigInteger('profile_autobridge_id')->default(3);
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('CPF');
             $table->string('CEP');
             $table->string('CNH');

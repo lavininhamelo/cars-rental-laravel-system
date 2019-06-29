@@ -12,30 +12,24 @@ class ProfilesTableSeeder extends Seeder
     public function run()
     {
         $profilesTable = DB::table('profiles');
-        
+        $profilesTable->delete();
         $profilesTable->insert([
-        	'name' => 'Desenvolvimento AutoBridge',
-        	'description' => 'Perfil para desenvolvimento'
+            'id'=>'1',
+        	'name' => 'Administrador',
+        	'description' => 'Perfil total'
         ]);
 
         $profilesTable->insert([
-        	'name' => 'Vendas AutoBridge',
-        	'description' => 'Perfil para parceria com lojas de aluguel'
+            'id'=>'2',
+        	'name' => 'Funcionário',
+        	'description' => 'Perfil de funcionário da locadora'
         ]);
 
         $profilesTable->insert([
-        	'name' => 'Gerente Loja',
-        	'description' => 'Gerencia a sua rede de lojas'
-        ]);
-
-		$profilesTable->insert([
-        	'name' => 'Atendente Loja',
-        	'description' => 'Gerencia a frota de aluguel'
-        ]);
-
-        $profilesTable->insert([
-        	'name' => 'Usuário',
+            'id'=>'3',
+        	'name' => 'Cliente',
         	'description' => 'Realiza aluguel do veículos'
         ]);
+
     }
 }
