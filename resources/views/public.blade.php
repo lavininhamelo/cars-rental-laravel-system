@@ -29,11 +29,11 @@
                             </div>
                             <div class="collapse navbar-collapse" id="navbar-collapse">
                                 <ul data-nav-partner="false">
-                                    <li><a href="#" ><span>Para Você</span></a></li>
-                                    <li><a href="#" ><span>Para Empresas</span></a></li>
-                                    <li><a href="/rentals" ><span>Minhas Reservas</span></a></li>
+                                    <li><a href="/" ><span>Home</span></a></li>
+                                    <li><a href="#" ><span>Para Voce</span></a></li>
                                     <li><a href="#" ><span>Parcerias & Ofertas</span></a></li>
                                     <li><a href="#" ><span>Atendimento</span></a></li>
+                                    <li><a href="/rentals" ><span>Minhas Reservas</span></a></li>
                                     @if (Route::has('login'))
                                     @auth
                                     <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
