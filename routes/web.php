@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-
+Route::get('/', ['as' => 'public', 'uses' => 'HomeController@show']);
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'UserController@profile')->name('profile');
 Route::get('/public', ['as' => 'public', 'uses' => 'HomeController@show']);
