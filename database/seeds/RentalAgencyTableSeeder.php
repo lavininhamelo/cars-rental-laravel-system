@@ -17,7 +17,7 @@ class RentalAgencyTableSeeder extends Seeder
         //rentalAgency
         $rentalAgencyTable->insert([
             'id' => '1',
-            'name' => 'Agency 1',
+            'name' => 'Locadora Moreninha',
             'city' => 'Campo Grande',
             'state' => 'MS',
             'country' => 'Brazil',
@@ -26,7 +26,7 @@ class RentalAgencyTableSeeder extends Seeder
         ]);
         $rentalAgencyTable->insert([
             'id' => '2',
-            'name' => 'Agency 2',
+            'name' => 'Locadora Vila Olinda',
             'city' => 'Campo Grande',
             'state' => 'MS',
             'country' => 'Brazil',
@@ -35,7 +35,7 @@ class RentalAgencyTableSeeder extends Seeder
         ]);
         $rentalAgencyTable->insert([
             'id' => '3',
-            'name' => 'Agency 3',
+            'name' => 'Locadora Afonso Pena',
             'city' => 'Campo Grande',
             'state' => 'MS',
             'country' => 'Brazil',
