@@ -45,7 +45,7 @@ class VehiclePolicy
             
             if($this->full_acess($value['name'])){
                 return true;
-            }elseif ($value['name'] == 'Vehicle_List') {
+            }elseif ($value['name'] == 'Vehicle_List_all') {
                 return true;
             }
         }

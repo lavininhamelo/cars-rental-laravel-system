@@ -20,8 +20,8 @@ class RentalAgencyController extends Controller
      */
     public function index()
     {
-        $agencies = RentalAgency::latest()->paginate(10);
-        return view('rentalagency.index', compact('agencies'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $agencies = RentalAgency::all();
+        return view('rentalagency.index', compact('agencies'));
     }
 
     /**
@@ -56,17 +56,6 @@ class RentalAgencyController extends Controller
 
         return redirect()->route('rentalagency.index')
         ->with('success', 'Agência criada com sucesso');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //implementar visualização individual e sua view
     }
 
     /**

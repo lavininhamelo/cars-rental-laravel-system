@@ -20,7 +20,7 @@ class VehicleController extends Controller
     {
         $this->authorize('listVehicles', Vehicle::class);
         $vehicles = Vehicle::latest()->paginate(10);
-        return view('vehicles.index', compact('vehicles'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('vehicles.index', compact('vehicles'));
     }
     /**
      * Show the form for creating a new resource.
@@ -104,7 +104,8 @@ class VehicleController extends Controller
             ->with('success', 'Veículo atualizado com sucesso');
     }
 
-    public function update_status(Request $request, Vehicle $vehicle){
+    public function update_status(Request $request,$vehicle_id){
+        $vehicle = Vehicle::find($vehicle_id); 
         $vehicle->update($request->all());
         return redirect()->route('vehicles.index')
             ->with('success', 'Veículo atualizado com sucesso');

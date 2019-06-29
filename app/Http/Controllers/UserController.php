@@ -23,8 +23,8 @@ class UserController extends Controller
     public function index()
     {
         $this->authorize('listUsers', User::class);
-        $users = User::latest()->paginate(10);
-        return view('users.index', compact('users'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
        /**
      * Show the form for creating a new resource.
@@ -51,7 +51,7 @@ class UserController extends Controller
             'email' => 'required|string|unique:users',
             'CPF' => 'required|string|size:11|unique:users',
             'CEP' => 'required|string|size:8',
-            'CNH' => 'required|string|size:11|unique:users',
+            'CNH' => 'unique:users',
             'status_id' => 'required|integer',
             'password' => 'required'
         ]);

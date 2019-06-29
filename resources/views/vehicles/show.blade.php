@@ -34,21 +34,19 @@
                   <table class="table table-bordered table-invoice">
                     <tbody>
                     <tr>
-                                    <td class="width30">Status:</td>
-                                    <td class="width70"><strong>{{$vehicle->status->name}}</strong>
-                                        <form action="{{ route('vehicles.update_status', $vehicle->id)}}" method="post">
-                                          @csrf
-                                            <select name="status">
-                                              <option value="">Selecione</option>
-                                              <option value="1">Disponível</option>
-                                              <option value="2">Manutenção</option>
-                                            </select>
-                                            <input type="submit" class="btn btn-success" value="Atualizar status">
-                                        </form>
-
-                                    </td>
-
-                                  </tr>
+                      <td class="width30">Status:</td>
+                      <td class="width70"><strong>{{$vehicle->status->name}}</strong>
+                        <form action="{{ route('vehicles.update_status', $vehicle->id)}}" method="post">
+                          @csrf
+                          <select name="status_id">
+                            <option value="">Selecione</option>
+                            <option value="1">Disponível</option>
+                            <option value="2">Manutenção</option>
+                          </select>
+                          <input type="submit" class="btn btn-success" value="Atualizar status">
+                        </form>
+                      </td>
+                    </tr>
                       <tr>
                         <td class="width30">Placa:</td>
                         <td class="width70"><strong>{{$vehicle->license_plate}}</strong></td>

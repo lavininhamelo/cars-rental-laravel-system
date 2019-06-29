@@ -132,10 +132,11 @@
                                         <div class="row">
                                             <div class="control-group">
                                                 <div class="well" style="margin-left: 20px; margin-top:20px; margin-bottom:-50px;">
-                                                    <div class="input-append date" id="datetimepicker1">
+                                                    <div >
                                                         <label>DATA DE RETORNO</label>
-                                                        <input data-format="dd/MM/yyyy hh:mm:ss" name="return_date" type="datetime-local" value="28/06/2019 22:56:50" <span class="add-on">
-
+                                                            <div class="controls">
+                                                                <input name="return_date" type="datetime-local" min="<?php echo $date ?>" class="span5">
+                                                            </div>
                                                         </span>
                                                     </div>
 
@@ -164,7 +165,7 @@
                                             </div>
 
                                             <input type="hidden" name="user_id" class="form-control" value="{{auth()->user()->id}}">
-                                            <input type="hidden" name="vehicle_id" class="form-control" value="1">
+                                            <input type="hidden" name="vehicle_id" class="form-control" value="{{$vehicle->id}}">
 
 
 
@@ -304,13 +305,7 @@
         </div>
     </footer>
     </div>
-    <script type="text/javascript">
-        $(function() {
-            $('#datetimepicker1').datetimepicker({
-                language: 'pt-BR'
-            });
-        });
-    </script>
+  
     <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
 
     <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker_002.js')}}"></script>

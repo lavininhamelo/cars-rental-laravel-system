@@ -46,8 +46,8 @@
                 @csrf
                   <select name="status">
                     <option value="">Selecione</option>
-                    <option value="lesead">Alugado</option>
-                    <option value="returned">Retornado</option>
+                    <option value="progress">Progresso</option>
+                    <option value="fineshed">Encerrado</option>
                   </select>
                   <input type="submit" class="btn btn-success" value="Atualizar status">
               </form>

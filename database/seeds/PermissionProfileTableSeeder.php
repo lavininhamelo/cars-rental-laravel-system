@@ -68,6 +68,16 @@ class PermissionProfileTableSeeder extends Seeder
             'profile_id' => '3',
             'permission_id' => '18'
         ]);
+        $permissionsTable->insert([
+            'id' => '12',
+            'profile_id' => '2',
+            'permission_id' => '6'
+        ]);
+        $permissionsTable->insert([
+            'id' => '13',
+            'profile_id' => '2',
+            'permission_id' => '9'
+        ]);
 
     }
 }
