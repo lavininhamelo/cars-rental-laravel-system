@@ -47,7 +47,7 @@ class RentalController extends Controller
     public function update(Request $request, Rental $rental){
         $vehicle = Vehicle::find($rental->vehicle_id);
         if(!empty($request->status)){
-            if($request->status == 'lesead'){
+            if($request->status == 'progress'){
                 $vehicle->update([
                 'status_id' => '3'
                 ]);
@@ -80,7 +80,7 @@ class RentalController extends Controller
             'vehicle_id' => $vehicle->id,
             'user_id' => $request->user_id,
             'value'=> $this->calculateValueRental($vehicle->value,$request->return_date),
-            'status'=> 'progress',
+            'status'=> 'reserved',
             'return_date' => $request->return_date
 
         ]);
