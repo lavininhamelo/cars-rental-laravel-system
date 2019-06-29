@@ -20,8 +20,8 @@ class RentalAgencyController extends Controller
      */
     public function index()
     {
-        $agency = RentalAgency::latest()->paginate(10);
-        return view('rentalagency.index', compact('agency'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $agencies = RentalAgency::latest()->paginate(10);
+        return view('rentalagency.index', compact('agencies'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -43,9 +43,6 @@ class RentalAgencyController extends Controller
      */
     public function store(Request $request)
     {
-        // echo '<pre>';
-        // var_dump($request);
-        // echo '</pre>';
         $request->validate([
             'name' => 'required|string',
             'city' => 'required|string',
@@ -55,7 +52,7 @@ class RentalAgencyController extends Controller
             'CNPJ' => 'required|string|size:14',
         ]);
 
-        RentalAgency::create($request->all()); //erro ao inserir
+        RentalAgency::create($request->all());
 
         return redirect()->route('rentalagency.index')
         ->with('success', 'Agência criada com sucesso');
@@ -75,34 +72,34 @@ class RentalAgencyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(RentalAgency $agency)
+    public function edit($id)
     {
-        return view ('rentalagency.edit', compact('agency'));
+        $id = RentalAgency::find($id);
+        return view ('rentalagency.edit')->with('agency', $id);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $rental = Rental::getRentalAgency();
         $request->validate([
-            'name' => 'required|integer',
-            'city' => 'integer',
+            'name' => 'required|string',
+            'city' => 'required|string',
             'state' => 'required|string',
             'country' => 'required|string',
             'location' => 'required|string',
             'CNPJ' => 'required|string|size:14',
         ]);
-
-        $user->update($request->all());
+        $agency = RentalAgency::find($id);
+        $agency->update($request->all());
 
         return redirect()->route('rentalagency.index')
             ->with('success', 'Agência atualizada com sucesso');
