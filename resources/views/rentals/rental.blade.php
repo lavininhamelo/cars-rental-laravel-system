@@ -82,12 +82,14 @@
                         </div>
                         <div class="collapse navbar-collapse" id="navbar-collapse">
                             <ul data-nav-partner="false">
-                            <li><a href="/" ><span>Home</span></a></li>
+                             <ul data-nav-partner="false">
+                                    <li><a href="/" ><span>Home</span></a></li>
                                     <li><a href="#" ><span>Para Voce</span></a></li>
                                     <li><a href="#" ><span>Parcerias & Ofertas</span></a></li>
                                     <li><a href="#" ><span>Atendimento</span></a></li>
-                                    <li><a href="/rentals" ><span>Minhas Reservas</span></a></li>
-                                @if (Route::has('login')) @auth
+                                    <li><a href="{{route('myRental')}}" ><span>Minhas Reservas</span></a></li>
+                                    @if (Route::has('login'))
+                                    @auth
                                 <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
                                     <span class="link-login"><a href="#" id="welcome">Bem-vindo
                                             {{Auth::user()->name}}</a></span> @if(Auth::user()->profile_id == 1)
@@ -305,7 +307,7 @@
         </div>
     </footer>
     </div>
-  
+
     <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
 
     <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker_002.js')}}"></script>

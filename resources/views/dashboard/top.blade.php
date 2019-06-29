@@ -82,10 +82,10 @@
             @can('listUsers', App\User::class)
               <li><a href="/users"><i class="icon icon-user"></i>        <span>Usuários</span></a></li>
             @endcan
-            
+
             <!-- <li><a href="#"><i class="icon icon-cog"></i><span>Manutenção</span></a></li> -->
             <!-- <li><a href="#"><i class="icon icon-th"></i>    <span>Funcionários</span></a></li> -->
-            
+
             <li><a href="/rentalagency"><i class="icon icon-th"></i>    <span>Agências</span></a></li>
 
 

@@ -3,7 +3,7 @@
 <html lang="pt-br">
    <head><link rel="shortcut icon" href="{{ asset('img/roda.ico')}}" type="image/x-icon" />
 
-<link rel="shortcut icon" href="{{ asset('img/roda.ico')}}" type="image/x-icon" />
+
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=10">
@@ -30,12 +30,12 @@
                                 <a class="navbar-brand"><img src="{{asset('/img/logo.png')}}" width="175"alt="Autobridge" title="Autobridge" class="img-responsive"></a>
                             </div>
                             <div class="collapse navbar-collapse" id="navbar-collapse">
-                                <ul data-nav-partner="false">
-                                    <li><a href="#" ><span>Para Você</span></a></li>
-                                    <li><a href="#" ><span>Para Empresas</span></a></li>
-                                    <li><a href="/rentals" ><span>Minhas Reservas</span></a></li>
+                                < <ul data-nav-partner="false">
+                                    <li><a href="/" ><span>Home</span></a></li>
+                                    <li><a href="#" ><span>Para Voce</span></a></li>
                                     <li><a href="#" ><span>Parcerias & Ofertas</span></a></li>
                                     <li><a href="#" ><span>Atendimento</span></a></li>
+                                    <li><a href="{{route('myRental')}}" ><span>Minhas Reservas</span></a></li>
                                     @if (Route::has('login'))
                                     @auth
                                     <li class="link-submenu link-submenu-costumer logged-out hidden-xs" style="display: block !important">
@@ -92,8 +92,8 @@
 <p><img src="{{ asset('img/perfil/reserva.png')}}" width="225"alt=""></p></a>
                                     </div>
                                      <div class="col p-r-5 p-r-xs-15" style="margin-bottom:100px;" >
-<a href="/perfil"><p><b>NOVA RESERVA</b></p>
-<p><img src="{{ asset('img/public/new.png')}}" width="155"alt=""></p></a>
+<a href="/public"><p><b>NOVA RESERVA</b></p>
+<p><img src="{{ asset('img/perfil/new.png')}}" width="155"alt=""></p></a>
                                     </div>
               <div class="col p-r-5 p-r-xs-15" style="margin-bottom:100px;" >
 <a href="/logout"><p><b>FAZER LOGOUT</b></p>
