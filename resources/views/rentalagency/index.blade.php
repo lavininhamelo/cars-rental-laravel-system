@@ -8,12 +8,12 @@
 </div>
 
 <div class="pull-right">
-    <a class="btn btn-success" style="margin-bottom:10px;" href="{{ route('rentalagency.create') }}"> Adicionar nova Agência</a> 
+    <a class="btn btn-success" style="margin-bottom:10px;" href="{{ route('rentalagency.create') }}"> Adicionar nova Agência</a>
 </div>
 
 @if($agencies->count() > 0)
 <div class="widget-box">
-  <div class="widget-title"> 
+  <div class="widget-title">
     <span class="icon">
       <i class="icon-th"></i>
     </span>
@@ -23,6 +23,7 @@
     <table class="table table-bordered table-hover table-condensed">
       <thead>
         <tr>
+        <th scope="col">ID</th>
           <th scope="col">Nome</th>
           <th scope="col">Cidade</th>
           <th scope="col">Estado</th>
