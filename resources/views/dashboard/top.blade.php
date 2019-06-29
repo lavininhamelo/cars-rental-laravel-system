@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<head><link rel="shortcut icon" href="{{ asset('img/roda.ico')}}" type="image/x-icon" />
 <title>@yield('title')</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

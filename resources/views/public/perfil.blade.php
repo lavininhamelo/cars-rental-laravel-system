@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="pt-br">
-   <head>
+   <head><link rel="shortcut icon" href="{{ asset('img/roda.ico')}}" type="image/x-icon" />
 
 <link rel="shortcut icon" href="{{ asset('img/roda.ico')}}" type="image/x-icon" />
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
