@@ -8,7 +8,7 @@ class StatusVehicle extends Model
 {
 
    	protected $fillable = [
-        ' id ',' name '
+        'id','name'
     ];
 
  
