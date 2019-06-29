@@ -15,4 +15,9 @@ class RentalAgency extends Model
     {
         return $this->hasMany(Vehicle::class);
     }
+
+    public function getRentalAgency($id){
+        $agency = RentalAgency::where('id', '=', $id);
+        return $agency;
+    }
 }

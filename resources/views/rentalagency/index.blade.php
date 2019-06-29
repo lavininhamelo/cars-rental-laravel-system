@@ -33,21 +33,21 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($agency as $agency)
+        @foreach ($agency as $a)
         <tr class="gradeX">
-          <td class="align-middle">{{ $agency->name}}</td>
-          <td class="align-middle">{{ $agency->city}}</td>
-          <td class="align-middle">{{ $agency->state}}</td>
-          <td class="align-middle">{{ $agency->country}}</td>
-          <td class="align-middle">{{ $agency->location}}</td>
-          <td class="align-middle">{{ $agency->CNPJ}}</td>
+          <td class="align-middle">{{ $a->name}}</td>
+          <td class="align-middle">{{ $a->city}}</td>
+          <td class="align-middle">{{ $a->state}}</td>
+          <td class="align-middle">{{ $a->country}}</td>
+          <td class="align-middle">{{ $a->location}}</td>
+          <td class="align-middle">{{ $a->CNPJ}}</td>
           <td class="actions">
-            <a class="btn btn-success btn-xs" href="{{ route('rentalagency.show',$agency->id) }}"><i class="icon-eye-open"></i> </a>
-            <a class="btn btn-warning btn-xs" href="{{ route('rentalagency.edit',$agency->id) }}"><i class="icon-edit"></i></a>
+            <a class="btn btn-success btn-xs" href="{{ route('rentalagency.show',$a->id) }}"><i class="icon-eye-open"></i> </a>
+            <a class="btn btn-warning btn-xs" href="{{ route('rentalagency.edit',$a->id) }}"><i class="icon-edit"></i></a>
             <a class="btn btn-danger btn-xs" href="#" data-toggle="modal" data-target="#delete-modal"><i class="icon-trash"></i></a>
           </td>
         </tr>
-        <form action="{{ route('rentalagency.destroy', $agency->id)}}" method="post">
+        <form action="{{ route('rentalagency.destroy', $a)}}" method="post">
           <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
