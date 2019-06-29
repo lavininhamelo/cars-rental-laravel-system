@@ -8,7 +8,7 @@ class RentalAgency extends Model
 {
 
     protected $fillable = [
-        ' id ',' name ',' city ',' state ',' country ',' location ',' CNPJ '
+        'id','name','city','state','country','location','CNPJ'
     ];
 
     public function vehicle()
