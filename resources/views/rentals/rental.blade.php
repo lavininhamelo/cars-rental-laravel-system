@@ -133,6 +133,7 @@
                                             <div class="control-group">
                                                 <div class="well" style="margin-left: 20px; margin-top:20px; margin-bottom:-50px;">
                                                     <div class="input-append date" id="datetimepicker1">
+                                                        <label>DATA DE RETORNO</label>
                                                         <input data-format="dd/MM/yyyy hh:mm:ss" name="return_date" type="datetime-local" value="28/06/2019 22:56:50" <span class="add-on">
 
                                                         </span>
