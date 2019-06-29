@@ -26,6 +26,8 @@ class RentalController extends Controller
         $date = new \DateTime();
         $date = $date->format('Y-m-d\TH:i');
         return view('rentals.index', compact('rentals', 'date'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $vehicles = Vehicle::where('status_id', '=', '1')->latest('created_at')->paginate(5);
+
 
     }
     public function rent($vehicle_id){
