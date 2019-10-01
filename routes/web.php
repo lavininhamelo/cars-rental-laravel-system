@@ -27,3 +27,5 @@ Route::get('rentals/vehicles/{id}', 'RentalController@rent')->name('rentals.vehi
 Route::resource('users', 'UserController');
 Route::resource('rentalagency', 'RentalAgencyController');
 Route::get('logout', 'Auth\LoginController@logout');
+Route::get('out', 'Auth\LoginController@logout');
+
