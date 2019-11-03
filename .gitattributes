@@ -1,8 +1,2 @@
-* text=auto
-*.css linguist-vendored
-*.scss linguist-vendored
-*.js linguist-vendored
-*.js linguist-detectable=false
-*.html linguist-detectable=false
-*.php diff=php
-CHANGELOG.md export-ignore
+*.php linguist-language=PHP
+*.js linguist-language=PHP
